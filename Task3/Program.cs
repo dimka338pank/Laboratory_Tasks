@@ -13,7 +13,7 @@ namespace Task3
             string text = "Шоколад Milka — це всесвітньо відомий швейцарський бренд \n(зараз під управлінням Mondelēz International),\n який виробляє ніжний молочний шоколад з додаванням справжнього альпійського молока. \nЙого впізнають за фіолетовою упаковкою, кремовою текстурою,\n що тане в роті, та солодким вершковим смаком";
             try
             {
-                Console.WriteLine("Введіть довжину рядка(цілі числа):");
+                Console.WriteLine("Введіть довжину рядка(лише цілі числа):");
                 int line_lenght = int.Parse(Console.ReadLine());
                 string startPath = "source.txt";
                 string endPath = "result.txt";
