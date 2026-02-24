@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Task3
 {
@@ -10,44 +11,48 @@ namespace Task3
         {
             Console.InputEncoding = System.Text.Encoding.UTF8;
             Console.OutputEncoding = System.Text.Encoding.UTF8;
-            string text = "Шоколад Milka — це всесвітньо відомий швейцарський бренд \n(зараз під управлінням Mondelēz International),\n який виробляє ніжний молочний шоколад з додаванням справжнього альпійського молока. \nЙого впізнають за фіолетовою упаковкою, кремовою текстурою,\n що тане в роті, та солодким вершковим смаком";
-            try
+            string startPath = "source.txt";
+            string endPath = "result.txt";
+            while (true)
             {
-                Console.WriteLine("Введіть довжину рядка(лише цілі числа):");
-                int line_lenght = int.Parse(Console.ReadLine());
-                string startPath = "source.txt";
-                string endPath = "result.txt";
                 if (!File.Exists(startPath))
                 {
-                    File.WriteAllLines(startPath, new[] {text, "оні це прибульці", "ура", "я куплю шоколадку", "зал", "<3"});
+                    string def_text = "Шоколад Milka — це всесвітньо відомий швейцарський бренд \n(зараз під управлінням Mondelēz International),\n який виробляє ніжний молочний шоколад з додаванням справжнього альпійського молока. \nЙого впізнають за фіолетовою упаковкою, кремовою текстурою,\n що тане в роті, та солодким вершковим смаком";
+                    File.WriteAllLines(startPath, new[] { def_text, "оні це прибульці", "ура", "я куплю шоколадку", "зал", "<3" });
                     Console.WriteLine($"Файл {startPath} не знайдено, тому він був створений і в нього був записаний текст");
                 }
-                string [] all_lines = File.ReadAllLines(startPath);
-                List<string> filteredLines = new List<string>();
-
-                foreach (string line in all_lines)
+                try
                 {
-                    Console.WriteLine($"Рядок: {line} Довжина: {line.Length}");
-                    if (line.Length <= line_lenght)
+                    Console.Write("Введіть максимальну довжину рядка: ");
+                    int line_lenght = int.Parse(Console.ReadLine());
+                    string[] all_lines = File.ReadAllLines(startPath);
+                    List<string> filteredLines = new List<string>();
+
+                    foreach (string line in all_lines)
                     {
-                        filteredLines.Add(line);
+                        Console.WriteLine($"Рядок: {line} Довжина: {line.Length}");
+                        if (line.Length <= line_lenght)
+                            filteredLines.Add(line);
+                    }
+
+                    File.WriteAllLines(endPath, filteredLines);
+                    Console.WriteLine($"У файл {endPath} збережено рядків: {filteredLines.Count}");
+                    string[] finalLines = File.ReadAllLines(endPath);
+                    if (filteredLines.Count > 0)
+                    {
+                        Console.WriteLine("Вміст кінцевого файлу: ");
+                        foreach (string line in finalLines)
+                        {
+                            Console.WriteLine(line);
+                        }
                     }
                 }
-
-                File.WriteAllLines(endPath, filteredLines);
-                Console.WriteLine($"У файл {endPath} збережено рядків: {filteredLines.Count}");
-                string[] finalLines = File.ReadAllLines(endPath);
-
-                Console.WriteLine("Вміст кінцевого файлу: ");
-                foreach (string line in finalLines)
+                catch (Exception ex)
                 {
-                    Console.WriteLine(line);
+                    Console.WriteLine($"Виникла помилка: {ex.Message}");
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Виникла помилка: {ex.Message}");
-            }
+            
         }
     }
 }
