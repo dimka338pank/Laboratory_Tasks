@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace Task2
 {
     internal class Program
@@ -10,7 +9,7 @@ namespace Task2
             Console.InputEncoding = System.Text.Encoding.UTF8;
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.WriteLine("Абстрактні класи");
-            MyEquation eq = new MyEquation();
+            MyEquation equation = new MyEquation();
             try
             {
                 Console.Write("Введіть початок інтервалу: ");
@@ -19,16 +18,17 @@ namespace Task2
                 double end = double.Parse(Console.ReadLine());
                 Console.Write("Введіть крок: ");
                 double step = double.Parse(Console.ReadLine());
-                eq.Solve(start, end, step);
+                equation.FindRoot(start, end, step);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine("Помилка вводу! Вводьте лише числа(якщо десятковий дріб, то через кому)" + ex.Message);
+                Console.WriteLine("Помилка вводу! Вводьте лише числа(якщо десятковий дріб, то через кому)");
             }
-
+            Console.WriteLine("\n\n\n");
             Console.WriteLine("Інтерфейс");
-            InterfaceSolver solver = new InterfaceSolver();
-            MyFunction myFunc = new MyFunction();
+
+            QuadraticFunction function = new QuadraticFunction();
+            ISolver solver = new ISolver();
             try
             {
                 Console.Write("Введіть початок інтервалу: ");
@@ -37,11 +37,11 @@ namespace Task2
                 double end = double.Parse(Console.ReadLine());
                 Console.Write("Введіть крок: ");
                 double step = double.Parse(Console.ReadLine());
-                solver.Solve(myFunc, start, end, step);
+                solver.Solve(function ,start, end, step);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine("Помилка вводу! Вводьте лише числа(якщо десятковий дріб, то через кому)" + ex.Message);
+                Console.WriteLine("Помилка вводу! Вводьте лише числа(якщо десятковий дріб, то через кому)");
             }
         }
     }
