@@ -7,7 +7,6 @@ namespace Task1
         public string surname { get; set; }
         public int age { get; set;}
         public int height { get; set; }
-        
         public Member(string surname, int age, int height)
         {
             this.surname = surname;

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B3D73E77-C131-4CB3-92FD-2F053B36441A}</ProjectGuid>
+    <ProjectGuid>{833310BC-8A97-4F3B-94A1-F8695D36086E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Task2</RootNamespace>
     <AssemblyName>Task2</AssemblyName>
@@ -44,10 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractClass.cs" />
-    <Compile Include="InterfaceClass.cs" />
-    <Compile Include="InterfaceSolver.cs" />
     <Compile Include="MyEquation.cs" />
-    <Compile Include="MyFunction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -22,9 +22,6 @@ namespace Task1
                 Console.WriteLine("Помилка при автозавантаженні: " + ex.Message);
             }
 
-
-
-
             bool running = true;
             while (running)
             {
