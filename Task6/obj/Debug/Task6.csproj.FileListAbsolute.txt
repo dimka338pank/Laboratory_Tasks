@@ -1,0 +1,8 @@
+D:\Університет\Дрістокод\Lab3(real 3 laba)\Task6\bin\Debug\Task6.exe.config
+D:\Університет\Дрістокод\Lab3(real 3 laba)\Task6\bin\Debug\Task6.exe
+D:\Університет\Дрістокод\Lab3(real 3 laba)\Task6\bin\Debug\Task6.pdb
+D:\Університет\Дрістокод\Lab3(real 3 laba)\Task6\obj\Debug\Task6.csproj.AssemblyReference.cache
+D:\Університет\Дрістокод\Lab3(real 3 laba)\Task6\obj\Debug\Task6.csproj.CoreCompileInputs.cache
+D:\Університет\Дрістокод\Lab3(real 3 laba)\Task6\obj\Debug\Task6.exe
+D:\Університет\Дрістокод\Lab3(real 3 laba)\Task6\obj\Debug\Task6.pdb
+D:\Університет\Дрістокод\Lab3(real 3 laba)\Task6\obj\Debug\Task6.exe.config
